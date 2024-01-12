@@ -11,39 +11,36 @@ import Landing from "./Pages/Landing";
 import Form from "./Pages/Form";
 import Success from "./Pages/Success";
 
-
 const App = () => {
-  const { auth } = useAuth()
+  const { auth } = useAuth();
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/start",
       element: <Welcome />,
     },
     {
-      path: '/login',
-      element: <Login />
+      path: "/login",
+      element: <Login />,
     },
     {
-      path: '/home',
-      element: !auth?.isAuth ? <Home /> : <Navigate to='/login' replace />
+      path: "/home",
+      element: auth?.isAuth ? <Home /> : <Navigate to="/login" replace />,
     },
     {
-      path: '/landing',
-      element: <Landing />
+      path: "/",
+      element: <Landing />,
     },
     {
-      path: '/submit',
-      element: <Form />
+      path: "/submit",
+      element: <Form />,
     },
     {
-      path: '/done',
-      element: <Success />
-    }    
+      path: "/done",
+      element: <Success />,
+    },
   ]);
-  
-  return (
-    <RouterProvider router={router} />
-  )
-}
 
-export default App
+  return <RouterProvider router={router} />;
+};
+
+export default App;
