@@ -93,7 +93,7 @@ function calculateSuccessPercentageForArea(areaFilteredData) {
 const Home = () => {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: ""
+        googleMapsApiKey: "AIzaSyDDb1UKThveCy3VrLlKQLyZ3SnWK8Ucc94"
       })
       const { signOut } = useAuth()
       const navigate = useNavigate()
@@ -410,11 +410,13 @@ setOpen(true)
         </div>
          </div>
         <h2 className='py-4 text-4xl font-bold' >Les Predictions</h2>
+        <h2 className='text-3xl font-extralight mb-3' > Percentage de réussite de restaurant </h2>
         <div className='h-20 w-20 rounded-full flex items-center justify-center border-4  border-green-500' >
             <span className='font-bold text-green-500' >
               {Number(stats?.precent)?.toFixed(0)} %
             </span>
             </div>
+            <h2 className='text-3xl font-extralight mb-3' > Percentage de réussite des categories </h2>
         <div className='grid grid-cols-8 gap-2'  >
           {
             stats?.catPercent

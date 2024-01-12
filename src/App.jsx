@@ -7,6 +7,9 @@ import Welcome from "./Pages/Welcome";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
 import { useAuth } from "./Store/useAuth";
+import Landing from "./Pages/Landing";
+import Form from "./Pages/Form";
+import Success from "./Pages/Success";
 
 
 const App = () => {
@@ -22,8 +25,20 @@ const App = () => {
     },
     {
       path: '/home',
-      element: auth?.isAuth ? <Home /> : <Navigate to='/login' replace />
-    }
+      element: !auth?.isAuth ? <Home /> : <Navigate to='/login' replace />
+    },
+    {
+      path: '/landing',
+      element: <Landing />
+    },
+    {
+      path: '/submit',
+      element: <Form />
+    },
+    {
+      path: '/done',
+      element: <Success />
+    }    
   ]);
   
   return (
