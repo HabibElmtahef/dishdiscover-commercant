@@ -99,7 +99,7 @@ function calculateSuccessPercentageForArea(areaFilteredData) {
 const Home = () => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyDDb1UKThveCy3VrLlKQLyZ3SnWK8Ucc94",
+    googleMapsApiKey: "",
   });
   const { signOut } = useAuth();
   const navigate = useNavigate();
